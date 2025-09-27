@@ -1,0 +1,18 @@
+# Build-Verzeichnisse
+/build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# CLion / JetBrains
+.idea/
+*.iml
+
+# MacOS
+.DS_Store
+
+# Backup-Dateien
+*.swp
+*.swo
+*~
