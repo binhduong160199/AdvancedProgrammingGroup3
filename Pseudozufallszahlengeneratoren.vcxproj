@@ -19,10 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="main.h" />
+    <ClCompile Include="Benchmark.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MiddleSquare.cpp" />
+    <ClCompile Include="Xorshift.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClInclude Include="Benchmark.h" />
+    <ClInclude Include="MiddleSquare.h" />
+    <ClInclude Include="RandomNumberGenerator.h" />
+    <ClInclude Include="Xorshift.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
