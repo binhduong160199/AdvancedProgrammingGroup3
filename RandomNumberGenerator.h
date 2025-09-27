@@ -2,11 +2,6 @@
 #define RANDOMNUMBERGENERATOR_H
 
 #include <iostream>
-#include <cstdint>
-#include <chrono>
-#include <memory>
-#include <vector>
-
 
 class RandomNumberGenerator {
 public:
