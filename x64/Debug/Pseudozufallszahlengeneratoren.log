@@ -1,4 +1,5 @@
 ﻿  Benchmark.cpp
+  BlumBlumShub.cpp
   main.cpp
   MiddleSquare.cpp
   Xorshift.cpp

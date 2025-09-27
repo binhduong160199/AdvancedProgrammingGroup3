@@ -1,27 +1,27 @@
-//
-// Created by Binh Duong Nguyen on 27.09.25.
-//
-
 #include "BlumBlumShub.h"
 
-// Konstruktor
-BlumBlumShub::BlumBlumShub(uint64_t seed, uint64_t p, uint64_t q) {
-    M = p * q;              // Modulus berechnen
-    state = seed % M;       // Startwert mod M
-    if (state == 0) state = 3; // 0 vermeiden (würde festhängen)
+BlumBlumShub::BlumBlumShub(uint64_t seed, uint64_t primeP, uint64_t primeQ) {
+    modulus = primeP * primeQ;               // compute modulus
+    currentState = seed % modulus;           // initialize state
+    if (currentState == 0) currentState = 3; // avoid stuck state at 0
 }
 
-// Liefert 1 Zufallsbit
+// Generate one random bit
 uint32_t BlumBlumShub::nextBit() {
-    state = (state * state) % M; // Rekurrenz: x_{n+1} = (x_n^2 mod M)
-    return state % 2;            // niedrigstes Bit extrahieren
+    currentState = (currentState * currentState) % modulus; // recurrence
+    return currentState % 2;                                // lowest bit
 }
 
-// Liefert eine 32-Bit Zufallszahl
+// Generate one 32-bit random integer
 uint32_t BlumBlumShub::nextInt() {
     uint32_t result = 0;
     for (int i = 0; i < 32; i++) {
         result = (result << 1) | nextBit();
     }
     return result;
+}
+
+// Implement abstract base class method
+uint64_t BlumBlumShub::next() {
+    return nextInt(); // return 32-bit random number as uint64_t
 }

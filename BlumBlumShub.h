@@ -1,26 +1,19 @@
-//
-// Created by Binh Duong Nguyen on 27.09.25.
-//
-
 #ifndef BLUMBLUMSHUB_H
 #define BLUMBLUMSHUB_H
 
 #include <cstdint>
+#include "RandomNumberGenerator.h"
 
-class BlumBlumShub {
+class BlumBlumShub : public RandomNumberGenerator {
 private:
-    uint64_t state; // aktueller Zustand x_n
-    uint64_t M;     // Modulus = p * q
-
+    uint64_t currentState;   // current internal state
+    uint64_t modulus;        // modulus = p * q
 public:
-    // Konstruktor mit Startwert (Seed), p und q
-    BlumBlumShub(uint64_t seed, uint64_t p, uint64_t q);
+    BlumBlumShub(uint64_t seed, uint64_t primeP, uint64_t primeQ);
 
-    // Liefert 1 Zufallsbit (0 oder 1)
-    uint32_t nextBit();
-
-    // Liefert eine 32-Bit Zufallszahl
-    uint32_t nextInt();
+    uint32_t nextBit();      // generates a single random bit
+    uint32_t nextInt();      // generates a 32-bit random number
+    uint64_t next() override; // required by RandomGenerator
 };
 
-#endif // BLUMBLUMSHUB_H
+#endif

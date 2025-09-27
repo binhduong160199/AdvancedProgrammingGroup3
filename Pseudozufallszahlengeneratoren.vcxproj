@@ -20,12 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Benchmark.cpp" />
+    <ClCompile Include="BlumBlumShub.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MiddleSquare.cpp" />
     <ClCompile Include="Xorshift.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Benchmark.h" />
+    <ClInclude Include="BlumBlumShub.h" />
     <ClInclude Include="MiddleSquare.h" />
     <ClInclude Include="RandomNumberGenerator.h" />
     <ClInclude Include="Xorshift.h" />
